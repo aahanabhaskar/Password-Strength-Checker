@@ -1,7 +1,5 @@
 import string
 import secrets
-want=int(input("Enter 1 for Password Strength and 2 for Strong Password Generation"))
-
 def CheckPassword():
     stre=0
     password=input("Enter Password:")
@@ -34,10 +32,14 @@ def generate_password():
         for c in range(length):
             password += secrets.choice(pool)
         return password
-
-if want==1:
-    print(CheckPassword())
-if want==2:
-    print(generate_password())
+while True:
+    want=int(input("Enter 1 for Password Strength and 2 for Strong Password Generation"))
+    if want==1:
+        print(CheckPassword())
+        continue
+    if want==2:
+        print(generate_password())
+        continue
+    
 
 
